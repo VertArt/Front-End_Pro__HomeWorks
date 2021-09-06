@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const x0 = Number (prompt ('введите сумму начального депозита'));
+        const yearlyInterestPercent = Number (prompt ('введите годовую процентную ставку депозита'));
+        const taxPecent = Number (prompt ('введите налог на прибыль в процентах'));
+        const mouthsNum = Number (prompt ('срок депозита в месяцах'));
+
+        const interestMonthly = yearlyInterestPercent / 12 / 100 ;
+        const interestMonthlyEffective =  interestMonthly * (1 - taxPecent / 100);
+
+        const x = x0 * (1 + interestMonthlyEffective) ** mouthsNum;
+       
+
+        const y = x0 * (1 + interestMonthlyEffective) ** 600;
+
+        alert ('Сумма на счету по истечению срока :' + ' ' + x );
+        alert ('Сумма на счету после 50 лет :' + ' ' + y );
+
+
+    </script>
+</body>
+</html>
